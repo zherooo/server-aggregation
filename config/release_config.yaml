@@ -1,0 +1,57 @@
+app:
+  name: server-aggregation
+  user_port: 8090
+  task_port: 8091
+log:
+  log_file_name: server-aggregation
+  log_level: debug
+  log_path: ./logs/
+  max_age: 7
+  max_backups: 10
+  max_size: 1024
+  request_log: true
+pprof:
+  addr: :8001
+  open: false
+
+mysql:
+  user:
+    dsn: root:admin1234@tcp(0.0.0.0:3306)/user?charset=utf8mb4&parseTime=True&loc=Local
+    conn_max_lifetime: 60
+    max_open_conns: 100
+    max_idle_conns: 5
+    log_model: true
+
+  task:
+    dsn: root:admin1234@tcp(0.0.0.0:3306)/task?charset=utf8mb4&parseTime=True&loc=Local
+    conn_max_lifetime: 60
+    max_open_conns: 100
+    max_idle_conns: 5
+    log_model: true
+
+
+redis:
+  base:
+    addr: 0.0.0.0:6379
+    password: ""
+    db: 0
+    pool: 10
+  base2:
+    addr: 0.0.0.0:6379
+    password: ""
+    db: 0
+    pool: 10
+
+
+mongo:
+  firmware:
+    dsn: mongodb://0.0.0.0:7891
+  similarity_analysis_db:
+    dsn: mongodb://0.0.0.0:7891
+  fuzz_db:
+    dsn: mongodb://0.0.0.0:7891
+
+docker:
+  instance:
+    url: "tcp://0.0.0.0:4000"
+    version: "1.20"

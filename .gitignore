@@ -1,0 +1,18 @@
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+
+*.out
+logs
+
+# goland
+.idea/
+
+# vs code
+.vscode/
+.scannerwork/
+report.json
+
