@@ -55,11 +55,16 @@ make build
 ```shell
 ./server-aggregation [module_name] --env [environment]
 ```
-
+本地调试前置条件
+````
+创建配置文件中名为 userv,task 数据库
+修改配置文件中redis密码
+````
 本地调试测试：
 ```shell
-./server-aggregation userv1 --env debug
+go run main.go userv1 --env debug
 ```
+
 docker-compose.yml中，可根据command不同，使用不同的服务
 ```
 #web服务
